@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Retail spacE</title>
+        <link rel="icon" href="img/01.png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/slide.css">
+    </head>
+    <body>
+        <div class="app" id="app">
+            <div class="wrapper" v-scroll="handleScroll">
+                <header id="header" class="header" v-bind:class="{ header_fixed: isActive }">
+                    <div class="header_container">
+                        <nav id="nav" class="nav" v-bind:class="{ navbar_fixed: isActive }">
+                            <a href="#" class="logo" id="logo" v-bind:class="{ logo_fixed: isActive }">
+                                <img v-if="isActive" src="img/fixed_logo.svg" alt="logo">
+                                <img v-else src="img/logo.svg" alt="logo">
+                            </a>
+                            <div class="menu_burger" :class="{ burger_fixed: isActive, menu_open: menuOpen }" @click="menuOpen = !menuOpen">
+                                <span class="burger_line _line_1"></span>
+                                <span class="burger_line _line_2"></span>
+                                <span class="burger_line _line_3"></span>
+                            </div>
+                            <ul class="menu_list" v-bind:class="{ menu_fixed: isActive, menuList_open: menuOpen}">
+                                <li><a href="#project" class="menu_link" @click="menuOpen = !menuOpen">Проекты</a></li>
+                                <li><a href="#license" class="menu_link" @click="menuOpen = !menuOpen">Лицензия</a></li>
+                                <li><a href="#services" class="menu_link" @click="menuOpen = !menuOpen">Услуги</a></li>
+                                <li><a href="#about" class="menu_link" @click="menuOpen = !menuOpen">О нас</a></li>
+                                <li><a href="#contacts" class="menu_link" @click="menuOpen = !menuOpen">Контакты</a></li>
+                            </ul>
+                            <a href="#sendus" class="main_btn" id="main_btn" v-bind:class="{ fixed_btn: isActive, menuBtn_open: menuOpen }" @click="menuOpen = !menuOpen">Написать нам</a>
+                        </nav>
+                    </div>
+                </header>
+                <main id="main" class="main">
+                    <div class="main1_div">
+                        <div class="my_container">
+                            <div class="main1_content">
+                                <div class="main1_top">
+                                    <div class="main_logo desktop"><img src="img/01.png" alt="logo"></div>
+                                    <div class="main_logo adaptive"><img src="img/0037.png" alt="logo"></div>
+                                    <div class="titles">
+                                        <h1 class="h1_title">Брокеры и консультанты</h1>
+                                        <h2 class="h2_title">Торговой недвижимости</h2>
+                                    </div>
+                                    <div class="main1_top_icon"><img src="img/05.png" alt="img"></div>
+                                </div>
+                                <div class="main1_footer">
+                                    <div class="main1_footer1_icon"><img src="img/02.png" alt="icon"></div>
+                                    <div class="main1_footer_content">
+                                        <h3 class="main1_footer_title">Миссия</h3>
+                                        <p class="main1_footer_p">Объединить архитектуру, ритейл и инвестиции, делая мир лучше.</p>
+                                        <div class="main1_footer_line"><span></span></div>
+                                    </div>
+                                    <div class="main1_footer2_icon"><img src="img/03.png" alt="icon"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main2_div">
+                        <div class="main2_div_section">
+                            <div class="my_container">
+                                <div class="main2_content">
+                                    <div class="main2_content_top">
+                                        <div class="sub-titles sub1-titles">
+                                            <span><img src="img/001.svg" alt="span"></span>
+                                            <h2 class="subtitle sub_1">Ценности</h2>
+                                            <span><img src="img/001.svg" alt="span"></span>
+                                        </div>
+                                        <div class="main2_top_flex">
+                                            <div class="main2_top_block main2_top_1_bl">
+                                                <span class="main2_top_bl_span"><img src="img/002.svg" alt="img"></span>
+                                                <h4 class="main2_top_bl_h">Предприимчивость</h4>
+                                            </div>
+                                            <div class="main2_top_block main2_top_2_bl">
+                                                <span class="main2_top_bl_span"><img src="img/003.svg" alt="img"></span>
+                                                <h4 class="main2_top_bl_h">Профессионализм</h4>
+                                            </div>
+                                            <div class="main2_top_block main2_top_3_bl">
+                                                <span class="main2_top_bl_span"><img src="img/004.svg" alt="img"></span>
+                                                <h4 class="main2_top_bl_h">Доверие</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main2_content_body">
+                                        <div class="sub-titles sub2-titles">
+                                            <span><img src="img/001.svg" alt="span"></span>
+                                            <h2 id="project" class="subtitle sub_2">Проекты</h2>
+                                            <span><img src="img/001.svg" alt="span"></span>
+                                        </div>
+                                        <p class="main2_body_p">
+                                            За <span>8</span> лет проконсультировано более <span>50</span> проектов и более <span>1 000 000 кв.м.</span> Сдано в аренду более <span>500 000 кв.м.</span>
+                                        </p>
+                                        <div class="main2_years">
+                                            <div class="main2_years_line"></div>
+                                            <div class="main2_body_year">
+                                                <p class="main2_body_year_p">
+                                                    2022 г
+                                                    <span class="main2_body_year1_span"><img src="img/005.svg" alt="span"></span>
+                                                </p>
+                                            </div>
+                                            <div class="main2_body_section">
+                                                <div class="main2_body_flex">
+                                                    <div class="main2_body_block">
+                                                        <div class="main2_body_bl_img"><img src="img/06.png" alt="img"></div>
+                                                        <p class="main2_body_text">Исследование рынка и разработка концепции для ТРЦ «Alatau» в Алматинской области, пос. Боралдай.</p>
+                                                    </div>
+                                                    <div class="main2_body_block">
+                                                        <div class="main2_body_bl_img"><img src="img/07.png" alt="img"></div>
+                                                        <p class="main2_body_text">Исследование рынка и разработка концепции для ТРЦ «Amman mall» в г. Нур-Султан.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="main2_body_year">
+                                                <p class="main2_body_year_p">
+                                                    2021 г
+                                                    <span class="main2_body_year2_span"><img src="img/005.svg" alt="span"></span>
+                                                </p>
+                                            </div>
+                                            <div class="main2_body_section">
+                                                <div class="main2_body_box">
+                                                    <div class="main2_body_bloki">
+                                                        <div class="main2_body_bloki_img"><img src="img/08.png" alt="img"></div>
+                                                        <p class="main2_body_bloki-p">Исследование рынка и разработка концепции для ТЦ «Интегро» в г. Ташкент.</p>
+                                                    </div>
+                                                    <div class="main2_body_bloki">
+                                                        <div class="main2_body_bloki_img"><img src="img/09.png" alt="img"></div>
+                                                        <p class="main2_body_bloki-p">Разработка концепции и предброке ридж ТЦ «Алатау» в г. Каскелен.</p>
+                                                    </div>
+                                                    <div class="main2_body_bloki">
+                                                        <div class="main2_body_bloki_img"><img src="img/010.png" alt="img"></div>
+                                                        <p class="main2_body_bloki-p">Исследование рынка и разработка концепции для «GUM mall» в г. Ташкент.</p>
+                                                    </div>
+                                                    <div class="main2_body_bloki">
+                                                        <div class="main2_body_bloki_img"><img src="img/011.png" alt="img"></div>
+                                                        <p class="main2_body_bloki-p">Разработка концепции, полномасштабное исследование и предброкеридж ТРЦ «AZTM Mall» в г. Алматы.</p>
+                                                    </div>
+                                                    <div class="main2_body_bloki">
+                                                        <div class="main2_body_bloki_img"><img src="img/012.png" alt="img"></div>
+                                                        <p class="main2_body_bloki-p">Исследование рынка и разработка концепции для ТЦ «Edil» в г.Нур-Султан.</p>
+                                                    </div>
+                                                    <div class="main2_body_bloki">
+                                                        <div class="main2_body_bloki_img"><img src="img/013.png" alt="img"></div>
+                                                        <p class="main2_body_bloki-p">Коммерческий Due Diligence, предпродажная оценка для ТРЦ «MOSKVA metropolitan» г. Алматы.</p>
+                                                    </div>
+                                                    <div class="main2_body_bloki">
+                                                        <div class="main2_body_bloki_img"><img src="img/014.png" alt="img"></div>
+                                                        <p class="main2_body_bloki-p">Брокеридж и консалтинг ТРЦ «Globus» в г. Алматы.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div v-if="blockHidden" class="main2_body_sections">
+                                                <div class="main2_body_year">
+                                                    <p class="main2_body_year_p">
+                                                        2020 г
+                                                        <span class="main2_body_year2_span"><img src="img/005.svg" alt="span"></span>
+                                                    </p>
+                                                </div>
+                                                <div class="main2_body_section">
+                                                    <div class="main2_body_boxes">
+                                                        <div class="main2_body_blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/015.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Начало работы по управлению ТЦ «Promenade» в г. Алматы.</p>
+                                                        </div>
+                                                        <div class="main2_body_blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/016.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Реконцепция и брокеридж ТРЦ «Aqtobe Mall» в г. Актобе.</p>
+                                                        </div>
+                                                        <div class="main2_body_blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/017.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Создание крупнейшего аутлет молла в стране «Outlet City» в г. Алматы.</p>
+                                                        </div>
+                                                        <div class="main2_body_blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/018.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Разработка концепции и брокеридж ТРЦ «Khanshaim Plaza» в г. Туркестан.</p>
+                                                        </div>
+                                                        <div class="main2_body_blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/019.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Разработка концепции и предброкеридж ТРЦ «Semey Mall» в г. Семей.</p>
+                                                        </div>
+                                                        <div class="main2_body_blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/020.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Разработка концепции и предброкеридж ТЦ «Magnum Jag’alay’» в г. Нур-Султан.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="main2_body_year">
+                                                    <p class="main2_body_year_p">
+                                                        2019 г
+                                                        <span class="main2_body_year2_span"><img src="img/005.svg" alt="span"></span>
+                                                    </p>
+                                                </div>
+                                                <div class="main2_body_section">
+                                                    <div class="main2_body_flex-box">
+                                                        <div class="main2_body_flex-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/0022.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Создание и вывод на рынок первого онлайн-приложения для ритэйлеров.</p>
+                                                        </div>
+                                                        <div class="main2_body_flex-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/022.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Реализация проекта по реконцепции ТРЦ «Almaty Mall».</p>
+                                                        </div>
+                                                        <div class="main2_body_flex-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/023.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Реконцепция ТРЦ «Grand Store» в г. Караганда.</p>
+                                                        </div>
+                                                        <div class="main2_body_flex-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/024.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Разработка концепции, предброкеридж и консалтинг ТРЦ «Talgar Mall» в г. Талгар.</p>
+                                                        </div>
+                                                        <div class="main2_body_flex-blokies empty_box"></div>
+                                                        <div class="main2_body_flex-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/025.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Начало работы по управлению ТРЦ «Sputnik Mall» в г. Алматы.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="main2_body_year">
+                                                    <p class="main2_body_year_p">
+                                                        2018 г
+                                                        <span class="main2_body_year2_span"><img src="img/005.svg" alt="span"></span>
+                                                    </p>
+                                                </div>
+                                                <div class="main2_body_section">
+                                                    <div class="main2_body_flex-box">
+                                                        <div class="main2_body_flex-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/026.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Реализация и открытие ТРЦ «Aray City Mall» в г. Кызылорда.</p>
+                                                        </div>
+                                                        <div class="main2_body_flex-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/027.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Исследование рынка и разработка концепции для МФК на Арбате в г. Алматы.</p>
+                                                        </div>
+                                                        <div class="main2_body_flex-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/028.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Разработка концепции, консалтинг и брокеридж ТЦ формата Retail Box «Tauke Khan Avenue» в г. Шымкент</p>
+                                                        </div>
+                                                        <div class="main2_body_flex-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/029.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Разработка концепции и планировочных решений для ГУМ «Чынар» в г. Бишкек.</p>
+                                                        </div>
+                                                        <div class="main2_body_flex-blokies empty_box"></div>
+                                                        <div class="main2_body_flex-blokies empty_box"></div>
+                                                        <div class="main2_body_flex-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/030.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Разработка концепции и предброкеридж ТРЦ «Nursat City» в г. Шымкент.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="main2_body_year">
+                                                    <p class="main2_body_year_p">
+                                                        2017 г
+                                                        <span class="main2_body_year2_span"><img src="img/005.svg" alt="span"></span>
+                                                    </p>
+                                                </div>
+                                                <div class="main2_body_section">
+                                                    <div class="main2_body_2017-box">
+                                                        <div class="main2_body_2017-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/031.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Создание концепции для ТРЦ «Shym Mall» в г. Шымкент.</p>
+                                                        </div>
+                                                        <div class="main2_body_2017-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/032.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Открытие II очереди ТРЦ «MOSKVA metropolitan» в г. Алматы.</p>
+                                                        </div>
+                                                        <div class="main2_body_2017-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/033.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Победитель на CRE Awards 2017 в номинации «Брокер года».</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="main2_body_year">
+                                                    <p class="main2_body_year_p">
+                                                        2016 г
+                                                        <span class="main2_body_year2_span"><img src="img/005.svg" alt="span"></span>
+                                                    </p>
+                                                </div>
+                                                <div class="main2_body_section">
+                                                    <div class="main2_body_2016-box">
+                                                        <div class="main2_body_2016-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/034.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Открытие I очереди ТРЦ «MOSKVA metropolitan» в г. Алматы. Заполняемость 90%. Начало управления недвижимостью.</p>
+                                                        </div>
+                                                        <div class="main2_body_2016-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/035.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Реброкеридж ТРЦ «Ритц Палас» в г. Алматы.</p>
+                                                        </div>
+                                                        <div class="main2_body_2016-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/036.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Реброкеридж ТРЦ «Atakent Mall» в г. Алматы.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="main2_body_year">
+                                                    <p class="main2_body_year_p">
+                                                        2015 г
+                                                        <span class="main2_body_year2_span"><img src="img/005.svg" alt="span"></span>
+                                                    </p>
+                                                </div>
+                                                <div class="main2_body_section">
+                                                    <div class="main2_body_2015-box">
+                                                        <div class="main2_body_2015-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/037.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Реконструкция ТРЦ «City Plus Almaty». Увеличение GLA на 20%.</p>
+                                                        </div>
+                                                        <div class="main2_body_2015-blokies">
+                                                            <div class="main2_body_bloki_img"><img src="img/038.png" alt="img"></div>
+                                                            <p class="main2_body_bloki-p">Создание концепции для крупнейшего ТРЦ в Республике Казахстан - ТРЦ «Shymkent Mall».</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="main2_body_year">
+                                                    <p class="main2_body_year_p">
+                                                        2014 г
+                                                        <span class="main2_body_year2_span"><img src="img/005.svg" alt="span"></span>
+                                                    </p>
+                                                </div>
+                                                <div class="main2_body_section">
+                                                    <div class="main2_body_2014-box">
+                                                        <p class="main2_body_2014-p">Ержан Уразбаев основывает компанию «Retail Space Kz» в г. Алматы, Казахстан.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="main2_body_year">
+                                                    <p class="main2_body_year_p">
+                                                        2005 - 2014 гг
+                                                        <span class="main2_body_year2_span"><img src="img/005.svg" alt="span"></span>
+                                                    </p>
+                                                </div>
+                                                <div class="main2_body_section_last">
+                                                    <div class="main2_body_2005-box">
+                                                        <h3 class="main2_body_2005-title">СОБСТВЕННЫЙ ОПЫТ</h3>
+                                                        <ul class="main2_body_2005-list">
+                                                            <li>От менеджера отдела аренды в директора департамента.</li>
+                                                            <li>Ведение проектов:</li>
+                                                            <li>City Center (г. Алматы)</li>
+                                                            <li>City Plus (г. Алматы)</li>
+                                                            <li>Mega Astana (г. Нур-Султан)</li>
+                                                            <li>Молл «Aport» (г. Алматы)</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="main2_body_endyear">
+                                                <button v-if="blockHidden" class="main2_body_endyear_p" v-on:click="hideBlocks">
+                                                    Скрыть портфолио
+                                                    <span class="main2_body_endyear_span"><img src="img/006.svg" alt="span"></span>
+                                                </button>
+                                                <button v-else class="main2_body_endyear_p" v-on:click="showBlocks">
+                                                    Показать все работы до 2005 г
+                                                    <span class="main2_body_endyear_span"><img src="img/006.svg" alt="span"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main2_content_footer">
+                                        <div id="license" class="main2_footer">
+                                            <div class="main2_footer_top">
+                                                <img src="img/0025.png" alt="img">
+                                            </div>
+                                            <div class="main2_footer_bottom">
+                                                <div class="main2_footer_bottom_right">
+                                                    <h2 class="main2_footer_bottom_title">ЛИЦЕНЗИЯ На проектную деятельность</h2>
+                                                    <div class="main2_footer_bottom_info">
+                                                        <p class="main2_footer_bottom_p">№22003031 от 16.02.2022 г.</p>
+                                                        <span class="main2_footer_bottom_s"><img src="img/001.svg" alt="img"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main2_div_aside">
+                            <div class="header_container">
+                                <div class="main2_aside_content">
+                                    <div class="main2_aside_wrapper swiper mySwiper">
+                                        <div class="main2_aside_slider swiper-wrapper">
+                                            <div class="main2_aside_slide swiper-slide">
+                                                <div class="main2__slide_img"><img src="img/0027.png" alt="img"></div>
+                                                <div class="main2__slide_info">
+                                                    <div class="main2__slide_year">
+                                                        <div class="slider_line"></div>
+                                                        <span class="main2__slide_s"><img src="img/0026.svg" alt="img"></span>
+                                                        <p class="main2__slide_p">2016</p>
+                                                    </div>
+                                                    <p class="main2__slide_text">Благодарность от СКГП «INTERFOOD»</p>
+                                                </div>
+                                            </div>
+                                            <div class="main2_aside_slide swiper-slide">
+                                                <div class="main2__slide_img"><img src="img/0028.png" alt="img"></div>
+                                                <div class="main2__slide_info">
+                                                    <div class="main2__slide_year">
+                                                        <div class="slider_line"></div>
+                                                        <span class="main2__slide_s"><img src="img/0026.svg" alt="img"></span>
+                                                        <p class="main2__slide_p">2016</p>
+                                                    </div>
+                                                    <p class="main2__slide_text">Рекомендательное письмо от ТОО «ABN-ORDA»</p>
+                                                </div>
+                                            </div>
+                                            <div class="main2_aside_slide swiper-slide">
+                                                <div class="main2__slide_img"><img src="img/0029.png" alt="img"></div>
+                                                <div class="main2__slide_info">
+                                                    <div class="main2__slide_year">
+                                                        <div class="slider_line"></div>
+                                                        <span class="main2__slide_s"><img src="img/0026.svg" alt="img"></span>
+                                                        <p class="main2__slide_p">2017</p>
+                                                    </div>
+                                                    <p class="main2__slide_text">I степень в номинации «Брокер года». Commercial Real Estate 2017.</p>
+                                                </div>
+                                            </div>
+                                            <div class="main2_aside_slide swiper-slide">
+                                                <div class="main2__slide_img"><img src="img/0030.png" alt="img"></div>
+                                                <div class="main2__slide_info">
+                                                    <div class="main2__slide_year">
+                                                        <div class="slider_line"></div>
+                                                        <span class="main2__slide_s"><img src="img/0026.svg" alt="img"></span>
+                                                        <p class="main2__slide_p">2017</p>
+                                                    </div>
+                                                    <p class="main2__slide_text">1 место по показателям «динамика развития расчетов с бюджетом за 2015-2016 гг.»</p>
+                                                </div>
+                                            </div>
+                                            <div class="main2_aside_slide swiper-slide">
+                                                <div class="main2__slide_img"><img src="img/0031.png" alt="img"></div>
+                                                <div class="main2__slide_info">
+                                                    <div class="main2__slide_year">
+                                                        <div class="slider_line"></div>
+                                                        <span class="main2__slide_s"><img src="img/0026.svg" alt="img"></span>
+                                                        <p class="main2__slide_p">2021</p>
+                                                    </div>
+                                                    <p class="main2__slide_text">Рекомендательное письмо от группы компаний «K&K GmbH»</p>
+                                                </div>
+                                            </div>
+                                            <div class="main2_aside_slide swiper-slide">
+                                                <div class="main2__slide_img"><img src="img/0032.png" alt="img"></div>
+                                                <div class="main2__slide_info">
+                                                    <div class="main2__slide_year">
+                                                        <div class="slider_line"></div>
+                                                        <span class="main2__slide_s"><img src="img/0026.svg" alt="img"></span>
+                                                        <p class="main2__slide_p">2021</p>
+                                                    </div>
+                                                    <p class="main2__slide_text">Рекомендательное письмо от ТОО «Amadeo Центральная Азия»</p>
+                                                </div>
+                                            </div>
+                                            <div class="main2_aside_slide swiper-slide">
+                                                <div class="main2__slide_img"><img src="img/0033.png" alt="img"></div>
+                                                <div class="main2__slide_info">
+                                                    <div class="main2__slide_year">
+                                                        <div class="slider_line"></div>
+                                                        <span class="main2__slide_s"><img src="img/0026.svg" alt="img"></span>
+                                                        <p class="main2__slide_p">2021</p>
+                                                    </div>
+                                                    <p class="main2__slide_text">Рекомендательное письмо от ТРЦ «Хан Шатыр»</p>
+                                                </div>
+                                            </div>
+                                            <div class="main2_aside_slide swiper-slide">
+                                                <div class="main2__slide_img"><img src="img/0034.png" alt="img"></div>
+                                                <div class="main2__slide_info">
+                                                    <div class="main2__slide_year">
+                                                        <div class="slider_line"></div>
+                                                        <span class="main2__slide_s"><img src="img/0026.svg" alt="img"></span>
+                                                        <p class="main2__slide_p">2021</p>
+                                                    </div>
+                                                    <p class="main2__slide_text">I степень в номинации «Брокер года». Commercial Real Estate 2021.</p>
+                                                </div>
+                                            </div>
+                                            <div class="main2_aside_slide swiper-slide">
+                                                <div class="main2__slide_img"><img src="img/0035.png" alt="img"></div>
+                                                <div class="main2__slide_info">
+                                                    <div class="main2__slide_year">
+                                                        <span class="main2__slide_s main2__slide_sl"><img src="img/0026.svg" alt="img"></span>
+                                                        <p class="main2__slide_p">2016</p>
+                                                    </div>
+                                                    <p class="main2__slide_text">Получение лицензии на проектную деятельность.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main3_div">
+                        <div class="my_container">
+                            <div class="main3_content">
+                                <div class="sub-titles sub3-titles">
+                                    <span><img src="img/001.svg" alt="span"></span>
+                                    <h2 id="services" class="subtitle sub_3">ВИДЫ УСЛУГ</h2>
+                                    <span><img src="img/001.svg" alt="span"></span>
+                                </div>
+                                <div class="main3_content_flex">
+                                    <div class="main3_content_box main3_content_1_bl">
+                                        <div class="main3_content_box_content">
+                                            <h3 class="main3_content_box_title">АНАЛИТИКА</h3>
+                                            <ul class="main3_content_box_list">
+                                                <li>Прогнозный отчет о прибылях и убытках.</li> 
+                                                <li>Прогнозный отчет о движении денежных средств.</li>
+                                                <li>Прогноз налоговых отчислений.</li>
+                                                <li>Показатели инвестиционной привлекательности.</li>
+                                                <li>Рентабельность активов.</li>
+                                                <li>Оценка устойчивости финансовых показателей.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="main3_content_box main3_content_2_bl">
+                                        <div class="main3_content_box_content">
+                                            <h3 class="main3_content_box_title">АНАЛИТИКА 2</h3>
+                                            <ul class="main3_content_box_list">
+                                                <li>Прогнозный отчет о прибылях и убытках.</li>
+                                                <li>Прогнозный отчет о движении денежных средств.</li>
+                                                <li>Прогноз налоговых отчислений.</li>
+                                                <li>Показатели инвестиционной привлекательности.</li>
+                                                <li>Рентабельность активов.</li>
+                                                <li>Оценка устойчивости финансовых показателей.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="main3_content_box main3_content_3_bl">
+                                        <div class="main3_content_box_content">
+                                            <h3 class="main3_content_box_title">БРОКЕРИДЖ ПРОЕКТА</h3>
+                                            <ul class="main3_content_box_list">
+                                                <li>Прогнозный отчет о прибылях и убытках.</li>
+                                                <li>Прогнозный отчет о движении денежных средств.</li>
+                                                <li>Прогноз налоговых отчислений.</li>
+                                                <li>Показатели инвестиционной привлекательности.</li>
+                                                <li>Рентабельность активов.</li>
+                                                <li>Оценка устойчивости финансовых показателей.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="main3_content_box main3_content_4_bl">
+                                        <div class="main3_content_box_content">
+                                            <h3 class="main3_content_box_title">СОЗДАНИЕ КОНЦЕПЦИИ</h3>
+                                            <ul class="main3_content_box_list">
+                                                <li>Прогнозный отчет о прибылях и убытках.</li>
+                                                <li>Прогнозный отчет о движении денежных средств.</li>
+                                                <li>Прогноз налоговых отчислений.</li>
+                                                <li>Показатели инвестиционной привлекательности.</li>
+                                                <li>Рентабельность активов.</li>
+                                                <li>Оценка устойчивости финансовых показателей.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="main3_content_box main3_content_5_bl">
+                                        <div class="main3_content_box_content">
+                                            <h3 class="main3_content_box_title">ЭСКИЗНЫЙ И ДИЗАЙН ПРОЕКТ</h3>
+                                            <ul class="main3_content_box_list">
+                                                <li>Прогнозный отчет о прибылях и убытках.</li>
+                                                <li>Прогнозный отчет о движении денежных средств.</li>
+                                                <li>Прогноз налоговых отчислений.</li>
+                                                <li>Показатели инвестиционной привлекательности.</li>
+                                                <li>Рентабельность активов.</li>
+                                                <li>Оценка устойчивости финансовых показателей.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="main3_content_box main3_content_6_bl">
+                                        <div class="main3_content_box_content">
+                                            <h3 class="main3_content_box_title">УПРАВЛЕНИЕ ТРЦ</h3>
+                                            <ul class="main3_content_box_list">
+                                                <li>Прогнозный отчет о прибылях и убытках.</li>
+                                                <li>Прогнозный отчет о движении денежных средств.</li>
+                                                <li>Прогноз налоговых отчислений.</li>
+                                                <li>Показатели инвестиционной привлекательности.</li>
+                                                <li>Рентабельность активов.</li>
+                                                <li>Оценка устойчивости финансовых показателей.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main4_div">
+                        <div class="main4_content">
+                            <div class="sub-titles sub4-titles">
+                                <span><img src="img/001.svg" alt="span"></span>
+                                <h2 id="about" class="subtitle sub_3">О НАС</h2>
+                                <span><img src="img/001.svg" alt="span"></span>
+                            </div>
+                            <div class="main4_div_back"><img src="img/0040.jpg" alt="img"></div>
+                            <div class="main4_content_flex">
+                                <div class="main4_content_box main4_content1_box">
+                                    <div class="main4_content_info">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Ильяс ДЖАБИРУЛЫ</h3>
+                                            <p class="main4_info_text">Директор отдела аренды. Опыт работы в арендных отношениях более 7 лет. Был посредником в сделках у ключевых игроков рынка ритейла. Обладает высоким навыком ведения переговоров.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main4_content_box main4_content2_box">
+                                    <div class="main4_content_info">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Дана ТЕМІРҚАНОВА</h3>
+                                            <p class="main4_info_text">Специалист отдела аренды. Опыт работы в сфере ретейла более 6 лет. Умеет профессионально подходить к ведению переговоров между игроками ретейла.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main4_content_box main4_content3_box">
+                                    <div class="main4_content_info">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Фариат КИСМЕТОВА</h3>
+                                            <p class="main4_info_text">Специалист отдела аренды. Опыт работы в арендных отношениях более 6 лет. Была инициатором и посредником ключевых игроков рынка ритейла. Куратор направления запад.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main4_content_box main4_content4_box">
+                                    <div class="main4_content_info">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Аселхан НУРДИЛЛАЕВА</h3>
+                                            <p class="main4_info_text">Главный бухгалтер. Опыт работы в бухгалтерии более 8 лет. Является членом Профессиональной организации бухгалтеров РК. Имеет свидетельство об аккредитации профессионального бухгалтера выданное Комитетом финансового контроля Министерства финансов Республики Казахстан.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main4_content_box main4_content5_box">
+                                    <div class="main4_content_info">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Андрей ГОРДИЕНКО</h3>
+                                            <p class="main4_info_text">Партнер компании, опыт в компании более 8 лет. Руководит отделом исследований в компании. За 8 лет изучено более 30 проектов в 20 городах Казахстана и Центральной Азии.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main4_content_box main4_content6_box">
+                                    <div class="main4_content_info">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Eржан Уразбаев</h3>
+                                            <p class="main4_info_p">Основатель компании,</p>
+                                            <p class="main4_info_text">имеет более 18 лет опыта консалтинга и управления торговыми центрами. Работал над более чем 38 проектов по Казахстану.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main4_content_box main4_content7_box">
+                                    <div class="main4_content_info">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Артём КОЛМОГОРОВ</h3>
+                                            <p class="main4_info_text">Старший партнер компании. Общий стаж работы на рынке коммерческой недвижимости более 9 лет. Руководил исследованиями в компании, за весь срок работы было изучено более 14 городов в РК и за рубежом. Начиная с 2019 года занимает пост генерального директора компании. Имеет сертификат CFA Level 1.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main4_content_box main4_content8_box">
+                                    <div class="main4_content_info">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Виталий НАМ</h3>
+                                            <p class="main4_info_text">Архитектор с 23-летним опытом. В его портфолио входят жилые комплексы, ТРЦ, школы и больницы, а так же ТРЦ MOSKVA metropolitan, и другие проекты. Его объекты сочетают в себе эргономичность, функциональность и эстетичность.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main4_content_box main4_content9_box">
+                                    <div class="main4_content_info">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Алина ВЕЙС</h3>
+                                            <p class="main4_info_text">Архитектор, специалист в разработке дизайна интерьера и экстерьера. Успешно закончила магистратуру в СпбГАСУ. В ее портфолио представлены проекты жилых комплексов, ТРЦ, а также проекты различных интерьеров и благоустройства территорий.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main4_content_box main4_content10_box">
+                                    <div class="main4_content_info">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Александр НАМ</h3>
+                                            <p class="main4_info_text">Работает в сфере графического дизайна более 8 лет. Основательно выделяется на фоне конкурентов, за счет тонкой способности угадывать желания клиентов и воплощать их мысли в яркие и запоминающиеся образы.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main4_content_box main4_content11_box">
+                                    <div class="main4_content_info">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Аркадий КОЛЧИНСКИЙ</h3>
+                                            <p class="main4_info_text">Директор отдела маркетинга. Опыт работы в маркетинге более 10 лет. Один из лучших специалистов в сфере управления торговой недвижимостью, разработке концепций, а так же сбора аналитических данных.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slick_flex">
+                                <div class="slick_flex_slider">
+                                    <div class="slick_image"><img src="img/008.png" alt="img"></div>
+                                    <div class="main4_content_infinite main4_content_infinitef">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Ильяс ДЖАБИРУЛЫ</h3>
+                                            <p class="main4_info_text">Директор отдела аренды. Опыт работы в арендных отношениях более 7 лет. Был посредником в сделках у ключевых игроков рынка ритейла. Обладает высоким навыком ведения переговоров.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick_flex_slider">
+                                    <div class="slick_image"><img src="img/009.png" alt="img"></div>
+                                    <div class="main4_content_infinite main4_content_2infinite openi">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Дана ТЕМІРҚАНОВА</h3>
+                                            <p class="main4_info_text">Специалист отдела аренды. Опыт работы в сфере ретейла более 6 лет. Умеет профессионально подходить к ведению переговоров между игроками ретейла.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick_flex_slider">
+                                    <div class="slick_image"><img src="img/0010.png" alt="img"></div>
+                                    <div class="main4_content_infinite main4_content_3infinite">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Фариат КИСМЕТОВА</h3>
+                                            <p class="main4_info_text">Специалист отдела аренды. Опыт работы в арендных отношениях более 6 лет. Была инициатором и посредником ключевых игроков рынка ритейла. Куратор направления запад.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick_flex_slider">
+                                    <div class="slick_image"><img src="img/0011.png" alt="img"></div>
+                                    <div class="main4_content_infinite main4_content_4infinite">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Аселхан НУРДИЛЛАЕВА</h3>
+                                            <p class="main4_info_text">Главный бухгалтер. Опыт работы в бухгалтерии более 8 лет. Является членом Профессиональной организации бухгалтеров РК. Имеет свидетельство об аккредитации профессионального бухгалтера выданное Комитетом финансового контроля Министерства финансов Республики Казахстан.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick_flex_slider">
+                                    <div class="slick_image"><img src="img/0012.png" alt="img"></div>
+                                    <div class="main4_content_infinite main4_content_5infinite">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Андрей ГОРДИЕНКО</h3>
+                                            <p class="main4_info_text">Партнер компании, опыт в компании более 8 лет. Руководит отделом исследований в компании. За 8 лет изучено более 30 проектов в 20 городах Казахстана и Центральной Азии.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick_flex_slider">
+                                    <div class="slick_image"><img src="img/0013.png" alt="img"></div>
+                                    <div class="main4_content_infinite main4_content_6infinite">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Eржан Уразбаев</h3>
+                                            <p class="main4_info_p">Основатель компании,</p>
+                                            <p class="main4_info_text">имеет более 18 лет опыта консалтинга и управления торговыми центрами. Работал над более чем 38 проектов по Казахстану</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick_flex_slider">
+                                    <div class="slick_image"><img src="img/0014.png" alt="img"></div>
+                                    <div class="main4_content_infinite main4_content_7infinite">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Артём КОЛМОГОРОВ</h3>
+                                            <p class="main4_info_text">Старший партнер компании. Общий стаж работы на рынке коммерческой недвижимости более 9 лет. Руководил исследованиями в компании, за весь срок работы было изучено более 14 городов в РК и за рубежом. Начиная с 2019 года занимает пост генерального директора компании. Имеет сертификат CFA Level 1.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick_flex_slider">
+                                    <div class="slick_image"><img src="img/0015.png" alt="img"></div>
+                                    <div class="main4_content_infinite main4_content_8infinite">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Виталий НАМ</h3>
+                                            <p class="main4_info_text">Архитектор с 23-летним опытом. В его портфолио входят жилые комплексы, ТРЦ, школы и больницы, а так же ТРЦ MOSKVA metropolitan, и другие проекты. Его объекты сочетают в себе эргономичность, функциональность и эстетичность.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick_flex_slider">
+                                    <div class="slick_image"><img src="img/0016.png" alt="img"></div>
+                                    <div class="main4_content_infinite main4_content_9infinite">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Алина ВЕЙС</h3>
+                                            <p class="main4_info_text">Архитектор, специалист в разработке дизайна интерьера и экстерьера. Успешно закончила магистратуру в СпбГАСУ. В ее портфолио представлены проекты жилых комплексов, ТРЦ, а также проекты различных интерьеров и благоустройства территорий.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick_flex_slider">
+                                    <div class="slick_image"><img src="img/0017.png" alt="img"></div>
+                                    <div class="main4_content_infinite main4_content_10infinite">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Александр НАМ</h3>
+                                            <p class="main4_info_text">Работает в сфере графического дизайна более 8 лет. Основательно выделяется на фоне конкурентов, за счет тонкой способности угадывать желания клиентов и воплощать их мысли в яркие и запоминающиеся образы.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick_flex_slider">
+                                    <div class="slick_image"><img src="img/0018.png" alt="img"></div>
+                                    <div class="main4_content_infinite main4_content_infinitel">
+                                        <span class="main4_info_span"><img src="img/007.svg" alt="img"></span>
+                                        <div class="main4_info_block">
+                                            <h3 class="main4_info_title">Аркадий КОЛЧИНСКИЙ</h3>
+                                            <p class="main4_info_text">Директор отдела маркетинга. Опыт работы в маркетинге более 10 лет. Один из лучших специалистов в сфере управления торговой недвижимостью, разработке концепций, а так же сбора аналитических данных.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main5_div">
+                        <div class="my_container">
+                            <div id="contacts" class="main5_content">
+                                <div class="main5_top">
+                                    <div class="main5_top_left">
+                                        <h2 class="main5_top_title">мобильное приложение</h2>
+                                        <div class="main5_top_body">
+                                            <div class="main5_top_body_1part">
+                                                <div class="main5_top_qr"><img src="img/0019.jpg" alt="img"></div>
+                                                <p class="main5_top_info">ПОЛЬЗУЙТЕСЬ НАШИМ ПРИЛОЖЕНИЕМ RETAIL SPACE</p>
+                                            </div>
+                                            <div class="main5_top_body_2part">
+                                                <div class="main5_top_apple"><img src="img/0020.jpg" alt="img"></div>
+                                                <div class="main5_top_google"><img src="img/0021.jpg" alt="img"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main5_top_right"><img src="img/0023.png" alt="img"></div>
+                                </div>
+                                <div id="sendus" class="main5_bottom">
+                                    <h2 class="main5_bottom_title">ОБРАТНАЯ СВЯЗЬ</h2>
+                                    <form class="main5_bottom_form" id="main5_bottom_form" name="main5_bottom_form">
+                                        <div class="main5_form_div main5_form_div_name">
+                                            <input type="text" class="main5_form_name main5_form_input" id="main5_form_name" name="main5_form_name" placeholder="Имя" maxlength="12" autocomplete="off" required>
+                                        </div>
+                                        <div class="main5_form_div  main5_form_div_tel">
+                                            <input type="tel" class="main5_form_tel main5_form_input" v-bind:class="{ wrong: isWrong }" id="main5_form_tel" name="main5_form_tel" placeholder="+7(___)-___-____." autocomplete="off" v-on:input="maskFunc" v-on:change="changeFun" required>
+                                        </div>
+                                        <div class="main5_form_div  main5_form_div_email">
+                                            <input type="email" class="main5_form_email main5_form_input" id="main5_form_email" name="main5_form_email" placeholder="Эл. почта" maxlength="32" autocomplete="off" required>
+                                        </div>
+                                        <div class="main5_form_div  main5_form_div_text">
+                                            <textarea name="main5_form_text" id="main5_form_text" class="main5_form_text" placeholder="Ваше сообщение" minlength="5" required></textarea>
+                                        </div>
+                                        <div class="main5_form_btns  main5_form_div_btn">
+                                            <button class="main5_form_button" id="main5_form_button" name="main5_form_button">Отправить заявку</button>
+                                            <p class="main5_form_btn_info">Консультант свяжется с вами в течении нескольких минут</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="main5_div_up deskme"><img src="img/0024.svg" alt="img"></a>
+                        <a href="#" class="main5_div_up adapme"><img src="img/0039.svg" alt="img"></a>
+                    </div>
+                </main>
+                <footer id="footer" class="footer">
+                    <div class="header_container">
+                        <div class="footer_content">
+                            <p class="footer_text">© 2022 Все права защищены</p>
+                            <a href="https://bestsolutions.kz/" class="footer_link">Сайт разработан BestSolutions</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="https://unpkg.com/imask"></script>
+        <script src="js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/header.js"></script>
+        <script src="js/button.js"></script>
+        <script src="js/infoperson.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/slick.js"></script>
+    </body>
+</html>
